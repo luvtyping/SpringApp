@@ -1,11 +1,12 @@
-package crud.controllers;
+package springApp.controllers;
 
-import crud.exception.FormatDataException;
-import crud.model.User;
-import crud.services.UserServiceImpl;
-import crud.services.ValidationService;
+import springApp.exception.FormatDataException;
+import springApp.model.User;
+import springApp.services.UserServiceImpl;
+import springApp.services.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,13 +42,13 @@ public class UserController {
     }
 
     @PostMapping()
-    public User create(@RequestBody User newUser) {
+    public ResponseEntity<User> create(@RequestBody User newUser) {
         try {
             validationService.validateUser(newUser);
         } catch (FormatDataException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
-        return userService.save(newUser);
+        return new ResponseEntity<>(userService.save(newUser), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
@@ -57,8 +58,7 @@ public class UserController {
         } catch (FormatDataException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
-        userService.update(user, id);
-        return user;
+        return userService.update(user, id);
     }
 
     @DeleteMapping("/{id}")

@@ -1,6 +1,6 @@
-package crud.config;
+package springApp.config;
 
-import crud.Application;
+import springApp.Application;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

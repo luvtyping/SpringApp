@@ -1,6 +1,6 @@
-package crud.services;
+package springApp.services;
 
-import crud.model.User;
+import springApp.model.User;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface UserService {
 
     User findById(long id);
 
-    void update(User user, long id);
+    User update(User user, long id);
 
     User save(User newUser);
 

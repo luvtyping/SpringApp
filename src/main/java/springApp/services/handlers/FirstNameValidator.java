@@ -1,10 +1,9 @@
-package crud.services.handlers;
+package springApp.services.handlers;
 
-import crud.exception.FormatDataException;
-import crud.model.User;
+import springApp.exception.FormatDataException;
+import springApp.model.User;
 
 public class FirstNameValidator implements Validator {
-
     private static final String REGEX_FOR_NAME = "^[a-zA-Z]*$";
     private static Validator nextValidator = new LastNameValidator();
 

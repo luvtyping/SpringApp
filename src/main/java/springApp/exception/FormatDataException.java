@@ -1,4 +1,4 @@
-package crud.exception;
+package springApp.exception;
 
 public class FormatDataException extends Exception {
     public FormatDataException(String message) {

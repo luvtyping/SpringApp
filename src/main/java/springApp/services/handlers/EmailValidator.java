@@ -1,10 +1,9 @@
-package crud.services.handlers;
+package springApp.services.handlers;
 
-import crud.exception.FormatDataException;
-import crud.model.User;
+import springApp.exception.FormatDataException;
+import springApp.model.User;
 
 public class EmailValidator implements Validator {
-
     private static final String REGEX_FOR_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     private static Validator nextValidator = new FirstNameValidator();
 

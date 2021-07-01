@@ -1,7 +1,7 @@
-package crud.services.handlers;
+package springApp.services.handlers;
 
-import crud.exception.FormatDataException;
-import crud.model.User;
+import springApp.exception.FormatDataException;
+import springApp.model.User;
 
 public interface Validator {
     void validate(User user) throws FormatDataException;

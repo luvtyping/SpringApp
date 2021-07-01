@@ -1,10 +1,9 @@
-package crud.services.handlers;
+package springApp.services.handlers;
 
-import crud.exception.FormatDataException;
-import crud.model.User;
+import springApp.exception.FormatDataException;
+import springApp.model.User;
 
 public class UserValidator implements Validator {
-
     private static Validator nextValidator = new RequiredFieldsValidator();
 
     @Override
